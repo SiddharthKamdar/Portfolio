@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Siddharth Kamdar | UI/UX Designer</title>
+  <meta name="description" content="Learn about Siddharth Kamdar, a passionate UI/UX and Graphic Designer from Ahmedabad, creating user-centered digital experiences." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8fafc;
+    }
+
+    /* Header Navigation */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    nav li {
+      margin: 0 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #4f46e5;
+    }
+
+    nav a.active {
+      color: #4f46e5;
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #4f46e5;
+    }
+
+    /* Hero Section */
+    .hero-about {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero-about h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero-about p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding: 4rem 0;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #1e293b;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #64748b;
+      line-height: 1.8;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .profile-placeholder {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(45deg, #f1f5f9, #e2e8f0);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: #94a3b8;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    /* Skills Section */
+    .skills-detailed {
+      background: #fff;
+      padding: 4rem 0;
+      margin: 2rem 0;
+    }
+
+    .skills-detailed h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #1e293b;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-item {
+      background: #f8fafc;
+      padding: 2rem;
+      border-radius: 15px;
+      border-left: 4px solid #4f46e5;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .skill-item h3 {
+      color: #1e293b;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .skill-item p {
+      color: #64748b;
+      margin-bottom: 1rem;
+    }
+
+    .skill-level {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #4f46e5, #7c3aed);
+      border-radius: 4px;
+      transition: width 2s ease;
+    }
+
+    /* Journey Section */
+    .journey {
+      padding: 4rem 0;
+      background: #f8fafc;
+    }
+
+    .journey h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #1e293b;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #4f46e5;
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      width: 50%;
+      padding: 0 2rem;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      right: -20px;
+      border-left-color: #fff;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: -20px;
+      border-right-color: #fff;
+    }
+
+    .timeline-date {
+      font-weight: 600;
+      color: #4f46e5;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-desc {
+      color: #64748b;
+    }
+
+    /* Values Section */
+    .values {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .values h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .value-card {
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .value-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .value-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 4rem 0;
+      text-align: center;
+      background: #fff;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #1e293b;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      color: #64748b;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav li {
+        margin: 0;
+      }
+
+      .hero-about h1 {
+        font-size: 2rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .about-text h2 {
+        font-size: 2rem;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        text-align: left;
+        padding-left: 50px;
+      }
+
+      .timeline-item:nth-child(odd) {
+        text-align: left;
+      }
+
+      .timeline-content::before {
+        left: -20px !important;
+        border-right-color: #fff !important;
+        border-left-color: transparent !important;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-about">
+    <div class="container">
+      <h1>About Me</h1>
+      <p>Passionate about creating meaningful digital experiences that connect with users and solve real-world problems.</p>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="about-text">
+        <h2>Hi, I'm Siddharth Kamdar</h2>
+        <p>I'm a passionate UI/UX and Graphic Designer based in Ahmedabad, Gujarat. With a keen eye for detail and a deep understanding of user behavior, I craft digital experiences that are not only visually stunning but also highly functional and user-friendly.</p>
+        
+        <p>My design philosophy centers around the belief that great design is invisible – it solves problems so elegantly that users don't even notice the complexity behind it. I specialize in creating clean, intuitive interfaces that bridge the gap between user needs and business goals.</p>
+        
+        <p>When I'm not designing, you'll find me exploring the latest design trends, experimenting with new tools, or collaborating with fellow designers to push the boundaries of what's possible in digital design.</p>
+      </div>
+      
+      <div class="about-image">
+        <div class="profile-placeholder">
+          👨‍💻
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-detailed">
+    <div class="container">
+      <h2>My Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <h3>UI/UX Design</h3>
+          <p>Creating intuitive and visually appealing user interfaces with a focus on user experience and accessibility.</p>
+          <div class="skill-level">
+            <span>Expert</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <h3>Prototyping</h3>
+          <p>Building interactive prototypes using Figma and Adobe XD to validate design concepts and user flows.</p>
+          <div class="skill-level">
+            <span>Advanced</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <h3>Graphic Design</h3>
+          <p>Designing impactful visual communications including logos, branding materials, and marketing collateral.</p>
+          <div class="skill-level">
+            <span>Advanced</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <h3>User Research</h3>
+          <p>Conducting user interviews, usability testing, and data analysis to inform design decisions.</p>
+          <div class="skill-level">
+            <span>Intermediate</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <h3>Web Design</h3>
+          <p>Creating responsive websites that work seamlessly across all devices and screen sizes.</p>
+          <div class="skill-level">
+            <span>Advanced</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <h3>Brand Identity</h3>
+          <p>Developing cohesive brand identities that communicate values and resonate with target audiences.</p>
+          <div class="skill-level">
+            <span>Advanced</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 78%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="journey">
+    <div class="container">
+      <h2>My Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2023 - Present</div>
+            <div class="timeline-title"> UI/UX Designer</div>
+            <div class="timeline-desc">Working with various clients to create user-centered digital experiences, from concept to implementation.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2022</div>
+            <div class="timeline-title">Advanced UI/UX Certification</div>
+            <div class="timeline-desc">Completed comprehensive training in user experience design, user research methodologies, and advanced prototyping techniques.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2021</div>
+            <div class="timeline-title">Graphic Design Specialization</div>
+            <div class="timeline-desc">Focused on developing skills in visual communication, brand identity design, and digital marketing materials.</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2020</div>
+            <div class="timeline-title">Started Design Journey</div>
+            <div class="timeline-desc">Began exploring the world of design, learning fundamental principles and experimenting with various design tools and techniques.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="container">
+      <h2>What Drives Me</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h3>User-Centered</h3>
+          <p>Every design decision is made with the user in mind, ensuring solutions that truly serve their needs.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">✨</div>
+          <h3>Attention to Detail</h3>
+          <p>I believe that the smallest details can make the biggest difference in user experience.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">🔄</div>
+          <h3>Continuous Learning</h3>
+          <p>The design field is constantly evolving, and I'm committed to staying current with the latest trends and techniques.</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>Collaboration</h3>
+          <p>Great design happens when diverse perspectives come together to solve complex problems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Let's Create Something Amazing</h2>
+      <p>Ready to bring your vision to life? I'd love to hear about your project and explore how we can work together.</p>
+      <a href="contact.html" class="cta-button">Get In Touch</a>
+    </div>
+  </section>
+
+  <script>
+    // Animate progress bars when they come into view
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const progressBars = entry.target.querySelectorAll('.progress-fill');
+          progressBars.forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = '0%';
+            setTimeout(() => {
+              bar.style.width = width;
+            }, 200);
+          });
+        }
+      });
+    }, observerOptions);
+
+    const skillsSection = document.querySelector('.skills-detailed');
+    if (skillsSection) {
+      observer.observe(skillsSection);
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
